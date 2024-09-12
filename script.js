@@ -1,6 +1,13 @@
 $(document).ready(function() {
     $(".fa-bars").on("click", function() {
-        $("nav").slideToggle();
+        $("nav").slideDown();
+        $(this).hide();
+        $(".fa-close").show();
+    })
+    $(".fa-close").on("click", function() {
+        $("nav").slideUp();
+        $(this).hide();
+        $(".fa-bars").show();
     })
     $(".portfolio").hover(function() {
         $(".portfolio p").slideDown();

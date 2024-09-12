@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Monospace;
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 header {
     background: url("img/image1.jpg") no-repeat;
@@ -23,15 +24,18 @@ header {
     cursor: none;
 }
 .logo {
-    text-shadow: 0px 3px 6px #C89A00;
+    text-shadow: 0 5px 25px #C89A00;
 }
 .fa-bars {
     font-size: 1.5rem;
 }
+.fa-close {
+    display: none;
+}
 nav {
     position: absolute;
     width: 100%;
-    background-color: #C89A00;
+    background-color: #A68000;
     text-align: center;
     display: none;
 }
