@@ -1,0 +1,39 @@
+@media screen and (min-width: 492px) {
+    .intro {
+        padding: 4rem 3rem;
+    }
+    .content {
+        padding: 0 3rem 3rem 3rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 587px) {
+    .intro {
+        padding: 4rem 5rem;
+    }
+    .content {
+        padding: 0 3rem 4.5rem 4.5rem;
+        line-height: 1.7rem;
+    }
+}
+
+@media screen and (min-width: 729px) {
+    .intro {
+        padding: 4.5rem 7rem;
+    }
+    .content {
+        padding: 0 3.5rem 6rem 6rem;
+        line-height: 2rem;
+    }
+}
+
+@media screen and (min-width: 1432px) {
+    .intro {
+        padding: 5rem 10rem;
+    }
+    .content {
+        padding: 0 4rem 7.5rem 7.5rem;
+        line-height: 2.5rem;
+    }
+}
