@@ -19,6 +19,11 @@ $(document).ready(function() {
     }, function() {
         $(".data p").slideUp();
     })
+    $(".calculator").hover(function() {
+        $(".calculator p").slideDown();
+    }, function() {
+        $(".calculator p").slideUp();
+    })
     $(".resume").hover(function() {
         $(".resume p").slideDown();
     }, function() {
