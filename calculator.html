@@ -61,6 +61,56 @@
                 answer = eval(s);
                 solution.text(answer);
             })
+            $("#sqrt").click(function() {
+                let i = prompt("Enter number");
+                i = Math.sqrt(i);
+                if (n == false) {
+                    sol(solution.text() + i);
+                } else {
+                    sol(i);
+                    n = false;
+                }
+            })
+            $("#log").click(function() {
+                let i = prompt("Enter number");
+                i = Math.log(i);
+                if (n == false) {
+                    sol(solution.text() + i);
+                } else {
+                    sol(i);
+                    n = false;
+                }
+            })
+            $("#sin").click(function() {
+                let i = prompt("Enter number");
+                i = Math.sin(i);
+                if (n == false) {
+                    sol(solution.text() + i);
+                } else {
+                    sol(i);
+                    n = false;
+                }
+            })
+            $("#cos").click(function() {
+                let i = prompt("Enter number");
+                i = Math.cos(i);
+                if (n == false) {
+                    sol(solution.text() + i);
+                } else {
+                    sol(i);
+                    n = false;
+                }
+            })
+            $("#tan").click(function() {
+                let i = prompt("Enter number");
+                i = Math.tan(i);
+                if (n == false) {
+                    sol(solution.text() + i);
+                } else {
+                    sol(i);
+                    n = false;
+                }
+            })
         })
     </script>
     <style type="text/css" media="all">
@@ -159,34 +209,35 @@
             <p class="clear">C</p>
             <p class="ans">Ans</p>
             <p class="del">Del</p>
+            <p id="sqrt">√</p>
         </div>
         <div>
             <p class="num">1</p>
             <p class="num">2</p>
             <p class="num">3</p>
             <p class="num">+</p>
-            <p>log</p>
+            <p id="log">log</p>
         </div>
         <div>
             <p class="num">4</p>
             <p class="num">5</p>
             <p class="num">6</p>
             <p class="num">-</p>
-            <p>sin</p>
+            <p id="sin">sin</p>
         </div>
         <div>
             <p class="num">7</p>
             <p class="num">8</p>
             <p class="num">9</p>
             <p class="num">*</p>
-            <p>cos</p>
+            <p id="cos">cos</p>
         </div>
         <div>
             <p class="num">.</p>
             <p class="num">0</p>
             <p id="equal">=</p>
             <p class="num">/</p>
-            <p>tan</p>
+            <p id="tan">tan</p>
         </div>
     </div>
 </body>
