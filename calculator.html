@@ -1,244 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calculator</title>
-    <link rel="shortcut icon" href="img/calculator.jpg" type="image/x-icon" />
-    <link rel="stylesheet" href="css/all.css" type="text/css" media="all" />
-    <script src="webquery.js" type="text/javascript" charset="utf-8"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Calculator</title>
+	<link rel="shortcut icon" href="img/calculator.jpg" type="image/x-icon" />
+	<link rel="stylesheet" href="css/all.css" type="text/css" media="all" />
+	<script src="webquery.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-    <script type="text/javascript" charset="utf-8">
-        $(document).ready(function() {
-            /* GLOBALS */
-            let solution = $(".solution");
-            let num = $(".num");
-            let answer = null;
-            function sol(text) {
-                solution.text(text);
-            }
-            let n = false;
-            $(".num").click(function() {
-                if (n == false) {
-                    num = $(this).text().trim();
-                    sol(solution.text() + num);
-                } else {
-                    sol($(this).text());
-                    n = false;
-                }
-            })
-            $(".clear").click(function() {
-                solution.text("");
-            })
-            $(".ans").click(function() {
-                n = false;
-                if (solution.text() == answer) {
-                    sol(answer);
-                } else {
-                    sol(solution.text() + answer);
-                }
-            })
-            $(".del").click(function() {
-                let s = solution.text();
-                s = s.slice(0, -1);
-                solution.text(s);
-            })
-            $(".fa-arrow-left").click(function() {
-                $(this).hide();
-                $("p:nth-child(5)").width("29.5%");
-                $(".fa-arrow-right").show();
-            })
-            $(".fa-arrow-right").click(function() {
-                $(this).hide();
-                $("p:nth-child(5)").width("0");
-                $(".fa-arrow-left").show();
-            })
-            $("#equal").click(function() {
-                n = true;
-                let s = solution.text();
-                answer = eval(s);
-                solution.text(answer);
-            })
-            $("#sqrt").click(function() {
-                let i = prompt("Enter number");
-                i = Math.sqrt(i);
-                if (n == false) {
-                    sol(solution.text() + i);
-                } else {
-                    sol(i);
-                    n = false;
-                }
-            })
-            $("#log").click(function() {
-                let i = prompt("Enter number");
-                i = Math.log(i);
-                if (n == false) {
-                    sol(solution.text() + i);
-                } else {
-                    sol(i);
-                    n = false;
-                }
-            })
-            $("#sin").click(function() {
-                let i = prompt("Enter number");
-                i = Math.sin(i);
-                if (n == false) {
-                    sol(solution.text() + i);
-                } else {
-                    sol(i);
-                    n = false;
-                }
-            })
-            $("#cos").click(function() {
-                let i = prompt("Enter number");
-                i = Math.cos(i);
-                if (n == false) {
-                    sol(solution.text() + i);
-                } else {
-                    sol(i);
-                    n = false;
-                }
-            })
-            $("#tan").click(function() {
-                let i = prompt("Enter number");
-                i = Math.tan(i);
-                if (n == false) {
-                    sol(solution.text() + i);
-                } else {
-                    sol(i);
-                    n = false;
-                }
-            })
-        })
-    </script>
-    <style type="text/css" media="all">
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: Monospace;
-            scroll-behavior: smooth;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: url("img/image3.jpg") no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
-        .calculator {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 0.5rem 1rem;
-            margin: 1rem;
-            border-radius: 20px;
-            width: 300px;
-            background-color: #5D0200;
-            font-size: 1.5rem;
-        }
-        .solution {
-            width: 78%;
-            padding: 1rem;
-            text-align: right;
-            color: #000541;
-            background-color: white;
-            border: 2px solid #000541;
-            overflow: scroll;
-        }
-        .fa-arrow-right {
-            display: none;
-        }
-        div {
-            display: flex;
-            position: relative;
-            width: 100%;
-        }
-        div:nth-child(2) p {
-            width: 33.3%;
-        }
-        p {
-            margin: 0.1rem;
-            padding: 1.5rem 0;
-            width: 29.5%;
-            text-align: center;
-            height: 60px;
-            color: white;
-            background-color: #101341;
-            border-radius: 10px;
-        }
-        p:hover {
-            box-shadow: inset 0 0 10px #000000;
-        }
-        p:nth-child(4) {
-            color: red;
-        }
-        p:nth-child(5) {
-            position: absolute;
-            right: 0;
-            color: red;
-            width: 0;
-            overflow: hidden;
-        }
-        .clear, .del {
-            background-color: #300100;
-        }
-        .cancel {
-            position: absolute;
-            right: 0;
-            width: 20%;
-        }
-        .ans {
-            background-color: #000541;
-        }
-        #equal {
-            background-color: #0B5D00;
-        }
-    </style>
-    <div class="calculator">
-        <div>
-            <p class="solution"></p>
-            <p class="cancel"><i class="fa-solid fa-arrow-left"></i>
-            <i class="fa-solid fa-arrow-right"></i></p>
-        </div>
-        <div>
-            <p class="clear">C</p>
-            <p class="ans">Ans</p>
-            <p class="del">Del</p>
-            <p id="sqrt">√</p>
-        </div>
-        <div>
-            <p class="num">1</p>
-            <p class="num">2</p>
-            <p class="num">3</p>
-            <p class="num">+</p>
-            <p id="log">log</p>
-        </div>
-        <div>
-            <p class="num">4</p>
-            <p class="num">5</p>
-            <p class="num">6</p>
-            <p class="num">-</p>
-            <p id="sin">sin</p>
-        </div>
-        <div>
-            <p class="num">7</p>
-            <p class="num">8</p>
-            <p class="num">9</p>
-            <p class="num">*</p>
-            <p id="cos">cos</p>
-        </div>
-        <div>
-            <p class="num">.</p>
-            <p class="num">0</p>
-            <p id="equal">=</p>
-            <p class="num">/</p>
-            <p id="tan">tan</p>
-        </div>
-    </div>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			/* GLOBALS */
+			let solution = $(".solution");
+			let absolute = $(".absolute");
+			let num = $(".num");
+			let answer = null;
+			let write = true;
+			function sol(text) {
+				solution.text(text);
+			}
+			function abs(text) {
+				absolute.text(text);
+			}
+			let n = false;
+			$(".num").click(function() {
+				if (write == true) {
+					if (n == false) {
+						num = $(this).text().trim();
+						sol(solution.text() + num);
+					} else {
+						sol($(this).text());
+						n = false;
+					}
+				} else {
+					if (n == false) {
+						num = $(this).text().trim();
+						abs(absolute.text() + num);
+					} else {
+						abs($(this).text());
+						n = false;
+					}
+				}
+			})
+			$(".clear").click(function() {
+				solution.text("");
+				absolute.text("");
+			})
+			$(".ans").click(function() {
+				n = false;
+				if (solution.text() == answer) {
+					sol(answer);
+				} else {
+					sol(solution.text() + answer);
+				}
+			})
+			$(".del").click(function() {
+				let s = solution.text();
+				s = s.slice(0, -1);
+				solution.text(s);
+				let a = absolute.text();
+				a = a.slice(0, -1);
+				absolute.text(a);
+			})
+			$(".fa-arrow-left").click(function() {
+				$(this).hide();
+				$("p:nth-child(5)").width("29.5%");
+				$(".fa-arrow-right").show();
+			})
+			$(".fa-arrow-right").click(function() {
+				$(this).hide();
+				$("p:nth-child(5)").width("0");
+				$(".fa-arrow-left").show();
+			})
+			$("#equal").click(function() {
+				$(".absolute").css({
+					"width": "0%", "display": "none"
+				});
+				n = true;
+				let s = solution.text().trim();
+				answer = eval(s);
+				solution.text(answer).trim();
+			})
+			$("#sqrt").click(function() {})
+			$("#log").click(function() {
+				let i = prompt("Enter number");
+				i = Math.log(i);
+				if (n == false) {
+					sol(solution.text() + i);
+				} else {
+					sol(i);
+					n = false;
+				}
+			})
+			$("#sin").click(function() {
+				let i = prompt("Enter number");
+				i = Math.sin(i);
+				if (n == false) {
+					sol(solution.text() + i);
+				} else {
+					sol(i);
+					n = false;
+				}
+			})
+			$("#cos").click(function() {
+				let i = prompt("Enter number");
+				i = Math.cos(i);
+				if (n == false) {
+					sol(solution.text() + i);
+				} else {
+					sol(i);
+					n = false;
+				}
+			})
+			$("#tan").click(function() {
+				let i = prompt("Enter number");
+				i = Math.tan(i);
+				if (n == false) {
+					sol(solution.text() + i);
+				} else {
+					sol(i);
+					n = false;
+				}
+			})
+			$("#sqrt, #log, #sin, #cos, #tan").click(function() {
+				$(".absolute").css({
+					"width": "40%", "display": "block"
+				});
+			});
+		})
+	</script>
+	<style type="text/css" media="all">
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: Monospace;
+			scroll-behavior: smooth;
+		}
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: url("img/image3.jpg") no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		.calculator {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 4rem 0.5rem 1rem;
+			margin: 1rem;
+			border-radius: 20px;
+			width: 300px;
+			background-color: #5D0200;
+			font-size: 1.5rem;
+		}
+		.solution {
+			width: 78%;
+			padding: 1rem;
+			text-align: right;
+			color: #000541;
+			background-color: white;
+			border: 2px solid #000541;
+			overflow: scroll;
+		}
+		.fa-arrow-right {
+			display: none;
+		}
+		div {
+			display: flex;
+			position: relative;
+			width: 100%;
+		}
+		div:nth-child(2) p {
+			width: 33.3%;
+		}
+		p {
+			margin: 0.1rem;
+			padding: 1.5rem 0;
+			width: 29.5%;
+			text-align: center;
+			height: 60px;
+			color: white;
+			background-color: #101341;
+			border-radius: 10px;
+		}
+		p:hover {
+			box-shadow: inset 0 0 10px #000000;
+		}
+		p:nth-child(4) {
+			color: red;
+		}
+		p:nth-child(5) {
+			position: absolute;
+			right: 0;
+			color: red;
+			width: 0;
+			overflow: hidden;
+		}
+		.clear, .del {
+			background-color: #300100;
+		}
+		.cancel {
+			position: absolute;
+			right: 0;
+			width: 20%;
+		}
+		.ans {
+			background-color: #000541;
+		}
+		#equal {
+			background-color: #0B5D00;
+		}
+		.absolute {
+			padding: 1rem;
+			text-align: right;
+			border: 2px solid #000541;
+			overflow: scroll;
+			position: absolute;
+			color: white;
+			display: none;
+			width: 0%;
+			right: 21%;
+			background-color: #101341;
+		}
+	</style>
+	<div class="calculator">
+		<div>
+			<p class="solution"></p>
+			<p class="absolute"></p>
+			<p class="cancel">
+				<i class="fa-solid fa-arrow-left"></i>
+				<i class="fa-solid fa-arrow-right"></i>
+			</p>
+		</div>
+		<div>
+			<p class="clear">
+				C
+			</p>
+			<p class="ans">
+				Ans
+			</p>
+			<p class="del">
+				Del
+			</p>
+			<p id="sqrt">
+				√
+			</p>
+		</div>
+		<div>
+			<p class="num">
+				1
+			</p>
+			<p class="num">
+				2
+			</p>
+			<p class="num">
+				3
+			</p>
+			<p class="num">
+				+
+			</p>
+			<p id="log">
+				log
+			</p>
+		</div>
+		<div>
+			<p class="num">
+				4
+			</p>
+			<p class="num">
+				5
+			</p>
+			<p class="num">
+				6
+			</p>
+			<p class="num">
+				-
+			</p>
+			<p id="sin">
+				sin
+			</p>
+		</div>
+		<div>
+			<p class="num">
+				7
+			</p>
+			<p class="num">
+				8
+			</p>
+			<p class="num">
+				9
+			</p>
+			<p class="num">
+				*
+			</p>
+			<p id="cos">
+				cos
+			</p>
+		</div>
+		<div>
+			<p class="num">
+				.
+			</p>
+			<p class="num">
+				0
+			</p>
+			<p id="equal">
+				=
+			</p>
+			<p class="num">
+				/
+			</p>
+			<p id="tan">
+				tan
+			</p>
+		</div>
+	</div>
 </body>
 </html>
