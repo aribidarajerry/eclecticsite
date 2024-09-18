@@ -1,39 +1,51 @@
-@media screen and (min-width: 492px) {
-    .intro {
-        padding: 4rem 3rem;
-    }
-    .content {
-        padding: 0 3rem 3rem 3rem;
-        line-height: 1.5rem;
-    }
+/*5*/
+
+@media screen and (min-width: 450px) {
+	.intro {
+		padding: 4rem 3rem;
+	}
+	.content {
+		padding: 0 3rem 3rem;
+	}
 }
 
-@media screen and (min-width: 587px) {
-    .intro {
-        padding: 4rem 5rem;
-    }
-    .content {
-        padding: 0 3rem 4.5rem 4.5rem;
-        line-height: 1.7rem;
-    }
-}
-
-@media screen and (min-width: 729px) {
-    .intro {
-        padding: 4.5rem 7rem;
-    }
-    .content {
-        padding: 0 3.5rem 6rem 6rem;
-        line-height: 2rem;
-    }
-}
-
-@media screen and (min-width: 1432px) {
-    .intro {
-        padding: 5rem 10rem;
-    }
-    .content {
-        padding: 0 4rem 7.5rem 7.5rem;
-        line-height: 2.5rem;
-    }
+@media screen and (min-width: 768px) {
+	header {
+		border-bottom: 2px solid #A68000;
+		justify-content: space-around;
+	}
+	.fa-bars, .fa-close {
+		display: none;
+	}
+	nav {
+		position: static;
+		background-color: transparent;
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: .5s ease-in-out;
+	}
+	nav a {
+		padding: 1.8rem;
+		color: green;
+		font-size: 1.5rem;
+	}
+	nav a:hover {
+		background-color: rgb(0,0,0,90%);
+	}
+	.intro {
+		padding: 4rem 3rem;
+		line-height: 2.5rem;
+	}
+	section h2 {
+		padding: 3rem;
+		font-size: 1.7rem;
+		letter-spacing: 0.3rem;
+	}
+	.content {
+		font-size: 1.5rem;
+		padding: 0 6rem 4rem;
+		line-height: 2.5rem;
+	}
 }

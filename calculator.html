@@ -143,6 +143,7 @@
 			background: url("img/image3.jpg") no-repeat;
 			background-position: center;
 			background-size: cover;
+			height: 100vh;
 		}
 		.calculator {
 			display: flex;
@@ -152,7 +153,8 @@
 			padding: 4rem 0.5rem 1rem;
 			margin: 1rem;
 			border-radius: 20px;
-			width: 300px;
+			width: 80%;
+			max-width: 400px;
 			background-color: #5D0200;
 			font-size: 1.5rem;
 		}
@@ -224,6 +226,18 @@
 			width: 0%;
 			right: 21%;
 			background-color: #101341;
+		}
+@media screen and (min-width: 450px) {
+			p {
+				margin: 0.2rem;
+				padding: 1.5rem 0;
+				width: 29.5%;
+				text-align: center;
+				height: 60px;
+				color: white;
+				background-color: #101341;
+				border-radius: 10px;
+			}
 		}
 	</style>
 	<div class="calculator">

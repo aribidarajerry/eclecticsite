@@ -11,12 +11,6 @@ $(document).ready(function() {
         $(this).hide();
         $(".fa-bars").show();
     })
-    $("a").click(function() {
-    	$("nav").width("0");
-    	$("#logo").css("visibility", "visible");
-        $(".fa-close").hide();
-        $(".fa-bars").show();
-    })
     $(".portfolio").hover(function() {
         $(".portfolio p").slideDown();
     }, function() {
