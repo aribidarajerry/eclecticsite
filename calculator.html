@@ -81,7 +81,7 @@
 			})
 			$("#log").click(function() {
 				let i = prompt("Enter number");
-				i = Math.log(i);
+				i = Math.log10(i);
 				if (n == false) {
 					sol(solution.text() + i);
 				} else {
@@ -91,7 +91,7 @@
 			})
 			$("#sin").click(function() {
 				let i = prompt("Enter number");
-				i = Math.sin(i);
+				i = Math.sin(i * Math.PI/180);
 				if (n == false) {
 					sol(solution.text() + i);
 				} else {
@@ -101,7 +101,7 @@
 			})
 			$("#cos").click(function() {
 				let i = prompt("Enter number");
-				i = Math.cos(i);
+				i = Math.cos(i * Math.PI/180);
 				if (n == false) {
 					sol(solution.text() + i);
 				} else {
@@ -111,7 +111,7 @@
 			})
 			$("#tan").click(function() {
 				let i = prompt("Enter number");
-				i = Math.tan(i);
+				i = Math.tan(i * Math.PI/180);;
 				if (n == false) {
 					sol(solution.text() + i);
 				} else {
