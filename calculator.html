@@ -70,7 +70,7 @@
 				solution.text(answer);
 			})
 			$("#sqrt").click(function() {
-				let i = prompt("Enter number");
+				let i = prompt("Enter number", answer);
 				i = Math.sqrt(i);
 				if (n == false) {
 					sol(solution.text() + i);
@@ -80,7 +80,7 @@
 				}
 			})
 			$("#log").click(function() {
-				let i = prompt("Enter number");
+				let i = prompt("Enter number", answer);
 				i = Math.log10(i);
 				if (n == false) {
 					sol(solution.text() + i);
@@ -90,7 +90,7 @@
 				}
 			})
 			$("#sin").click(function() {
-				let i = prompt("Enter number");
+				let i = prompt("Enter number", answer);
 				i = Math.sin(i * Math.PI/180);
 				if (n == false) {
 					sol(solution.text() + i);
@@ -100,7 +100,7 @@
 				}
 			})
 			$("#cos").click(function() {
-				let i = prompt("Enter number");
+				let i = prompt("Enter number", answer);
 				i = Math.cos(i * Math.PI/180);
 				if (n == false) {
 					sol(solution.text() + i);
@@ -110,7 +110,7 @@
 				}
 			})
 			$("#tan").click(function() {
-				let i = prompt("Enter number");
+				let i = prompt("Enter number", answer);
 				i = Math.tan(i * Math.PI/180);;
 				if (n == false) {
 					sol(solution.text() + i);

@@ -36,4 +36,8 @@ $(document).ready(function() {
 	}, function() {
 		$(".resume p").slideUp();
 	})
+	/*	$(".test").click(function() {
+		let div = "<div class='test'>Jerry</div>"
+		$(div).insertAfter("div");
+	})*/
 })
