@@ -142,3 +142,9 @@ section h2 {
 #contact {
 	color: #322300;
 }
+footer {
+	text-align: center;
+	padding: 1rem;
+	color: rgb(6, 68, 6);
+	background-color: #A68000;
+}

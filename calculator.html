@@ -119,6 +119,8 @@
 					n = false;
 				}
 			})
+			let date = new Date();
+			$("footer span").text(date.getFullYear());
 			/*
 			$("#sqrt, #log, #sin, #cos, #tan").click(function() {
 				$(".absolute").css({
@@ -137,14 +139,17 @@
 			scroll-behavior: smooth;
 		}
 		body {
-			display: flex;
-			justify-content: center;
-			align-items: center;
 			background: url("img/image3.jpg") no-repeat;
 			background-position: center;
 			background-size: cover;
-			height: 600px;
 			min-height: 100vh;
+		}
+		.main {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 600px;
 		}
 		.calculator {
 			display: flex;
@@ -227,6 +232,20 @@
 			right: 21%;
 			background-color: #101341;
 		}
+		a {
+			text-decoration: none;
+			color: #101341;
+		}
+		footer {
+			margin: 0;
+			text-align: center;
+			padding: 1rem 0 0.5rem;
+			color: white;
+			background-color: #300100;
+		}
+		footer h4 {
+			margin: 1rem;
+		}
 @media screen and (min-width: 450px) {
 			p {
 				margin: 0.2rem;
@@ -240,97 +259,104 @@
 			}
 		}
 	</style>
-	<div class="calculator">
-		<div>
-			<p class="solution"></p>
-			<p class="absolute"></p>
-			<p class="cancel">
-				<i class="fa-solid fa-arrow-left"></i>
-				<i class="fa-solid fa-arrow-right"></i>
-			</p>
-		</div>
-		<div>
-			<p class="clear">
-				C
-			</p>
-			<p class="ans">
-				Ans
-			</p>
-			<p class="del">
-				Del
-			</p>
-			<p id="sqrt">
-				√
-			</p>
-		</div>
-		<div>
-			<p class="num">
-				1
-			</p>
-			<p class="num">
-				2
-			</p>
-			<p class="num">
-				3
-			</p>
-			<p class="num">
-				+
-			</p>
-			<p id="log">
-				log
-			</p>
-		</div>
-		<div>
-			<p class="num">
-				4
-			</p>
-			<p class="num">
-				5
-			</p>
-			<p class="num">
-				6
-			</p>
-			<p class="num">
-				-
-			</p>
-			<p id="sin">
-				sin
-			</p>
-		</div>
-		<div>
-			<p class="num">
-				7
-			</p>
-			<p class="num">
-				8
-			</p>
-			<p class="num">
-				9
-			</p>
-			<p class="num">
-				*
-			</p>
-			<p id="cos">
-				cos
-			</p>
-		</div>
-		<div>
-			<p class="num">
-				.
-			</p>
-			<p class="num">
-				0
-			</p>
-			<p id="equal">
-				=
-			</p>
-			<p class="num">
-				/
-			</p>
-			<p id="tan">
-				tan
-			</p>
+	<div class="main">
+		<div class="calculator">
+			<div>
+				<p class="solution"></p>
+				<p class="absolute"></p>
+				<p class="cancel">
+					<i class="fa-solid fa-arrow-left"></i>
+					<i class="fa-solid fa-arrow-right"></i>
+				</p>
+			</div>
+			<div>
+				<p class="clear">
+					C
+				</p>
+				<p class="ans">
+					Ans
+				</p>
+				<p class="del">
+					Del
+				</p>
+				<p id="sqrt">
+					√
+				</p>
+			</div>
+			<div>
+				<p class="num">
+					1
+				</p>
+				<p class="num">
+					2
+				</p>
+				<p class="num">
+					3
+				</p>
+				<p class="num">
+					+
+				</p>
+				<p id="log">
+					log
+				</p>
+			</div>
+			<div>
+				<p class="num">
+					4
+				</p>
+				<p class="num">
+					5
+				</p>
+				<p class="num">
+					6
+				</p>
+				<p class="num">
+					-
+				</p>
+				<p id="sin">
+					sin
+				</p>
+			</div>
+			<div>
+				<p class="num">
+					7
+				</p>
+				<p class="num">
+					8
+				</p>
+				<p class="num">
+					9
+				</p>
+				<p class="num">
+					*
+				</p>
+				<p id="cos">
+					cos
+				</p>
+			</div>
+			<div>
+				<p class="num">
+					.
+				</p>
+				<p class="num">
+					0
+				</p>
+				<p id="equal">
+					=
+				</p>
+				<p class="num">
+					/
+				</p>
+				<p id="tan">
+					tan
+				</p>
+			</div>
 		</div>
 	</div>
+	<footer>
+		Copyright &copy; <span></span>
+		<br />
+		<h4>Powered &#10084; by <a href="https://eclecticsite.vercel.app"><em style="color: #00237A">Eclectic Site</em></a></h4>
+	</footer>
 </body>
 </html>

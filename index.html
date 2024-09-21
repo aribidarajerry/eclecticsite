@@ -16,7 +16,10 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8">
-		$(document).ready(function() {})
+		$(document).ready(function() {
+			let date = new Date();
+			$("footer span").text(date.getFullYear());
+		})
 	</script>
 	<style type="text/css" media="all">
 		/*nav(#C89A00)  li(#2F5D00)  */
@@ -131,5 +134,8 @@
 			</div> -->
 		</div>
 	</section>
+	<footer>
+		Copyright &copy; <span></span>
+	</footer>
 </body>
 </html>
