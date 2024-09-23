@@ -1,16 +1,8 @@
 $(document).ready(function() {
-	$(".fa-bars").on("click", function() {
-		$(this).hide();
-		$(".fa-close").show();
-		$("nav").css({
-			"width": "50%", "display": "flex"
-		});
-	})
-	$(".fa-close").on("click", function() {
-		$(this).hide();
-		$(".fa-bars").show();
-		$("nav").css("width", "0%");
-	})
+	$(".fa-bars").click(function() {
+		$(this).toggleClass("fa-close");
+		$("nav").toggleClass("active")
+	});
 	$(".portfolio").hover(function() {
 		$(".portfolio p").slideDown();
 	}, function() {

@@ -11,16 +11,8 @@
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
 			$(".fa-bars").click(function() {
-				$(this).hide();
-				$(".fa-close").show();
-				$("nav").css({
-					"width": "50%", "display": "flex"
-				});
-			});
-			$(".fa-close").click(function() {
-				$(this).hide();
-				$(".fa-bars").show();
-				$("nav").css("width", "0%");
+				$(this).toggleClass("fa-close");
+				$("nav").toggleClass("active")
 			});
 			let date = new Date();
 			$("footer span").text(date.getFullYear());
@@ -51,22 +43,24 @@
 		#logo {
 			font-size: 1.3rem;
 		}
-		.fa-close {
-			display: none;
-		}
 		nav {
 			position: absolute;
 			top: 100%;
 			right: 0;
-			flex-direction: column;
-			display: none;
 			width: 0;
 			max-width: 350px;
 			background-color: #00237A;
+			transition: .3s ease;
+			visibility: hidden;
+		}
+		.active {
+			width: 50%;
 			border: 1px solid white;
 			border-right: none;
+			visibility: visible;
 		}
 		nav a {
+			display: block;
 			text-decoration: none;
 			padding: 1rem;
 			color: white;
@@ -194,21 +188,21 @@
 			header h1 {
 				padding: 1.7rem;
 			}
-			.fa-bars, .fa-close {
-				position: absolute;
-				right: 0;
-				padding: 0;
-				visibility: hidden;
+			.fa-bars {
+				display: none;
 			}
 			nav {
 				position: static;
+				width: auto;
 				display: flex;
-				flex-direction: row;
 				justify-content: center;
 				align-items: center;
 				background-color: white;
-				width: 30%;
 				border: none;
+				visibility: visible;
+			}
+			.active {
+				width: auto;
 			}
 			nav a {
 				color: #00237A;
@@ -227,7 +221,7 @@
 				padding-bottom: 1.4rem;
 			}
 			p {
-				font-size: 1.5rem;
+				font-size: 1.4rem;
 			}
 			h3 {
 				line-height: 2.4rem;
@@ -239,7 +233,6 @@
 	<header>
 		<h1 id="logo">Princess Samiat Bada</h1>
 		<i class="fa-solid fa-bars"></i>
-		<i class="fa-solid fa-close"></i>
 		<nav>
 			<a href="#home">Home</a>
 			<a href="#about">About</a>

@@ -23,32 +23,40 @@ header {
 	justify-content: space-between;
 	align-items: center;
 }
-#logo, .fa-bars, .fa-close {
-	color: rgb(6, 68, 6);
+#logo, .fa-bars {
+	color: #2F5D00;
 	padding: 1.5rem;
 	cursor: none;
 }
 .fa-bars {
 	font-size: 1.5rem;
-}
-.fa-close {
-	display: none;
+	z-index: 99;
 }
 nav {
 	position: absolute;
-	top: 100%;
+	top: 0;
+	padding-top: 5rem;
 	right: 0;
-	display: none;
-	flex-direction: column;
 	width: 0;
 	max-width: 350px;
 	background-color: #A68000;
+	transition: .3s ease;
+	visibility: hidden;
+}
+.active {
+	width: 50%;
+	visibility: visible;
 }
 nav a {
+	display: block;
 	padding: 1.3rem;
 	color: #2F5D00;
 	font-size: 1.5rem;
 	border-bottom: 2px solid rgb(0,0,0,10%);
+	transition: .3s ease-in-out;
+}
+nav a:first-child {
+	border-top: 2px solid rgb(0,0,0,10%);
 }
 nav a:hover {
 	color: green;
