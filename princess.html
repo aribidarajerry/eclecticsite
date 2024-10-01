@@ -7,13 +7,24 @@
 	<title>Mayoress Princess Samiat</title>
 	<link rel="shortcut icon" href="img/princess1.jpg" type="image/x-icon" />
 	<link rel="stylesheet" href="css/all.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all" />
 	<script src="js/webquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/popper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
 			$(".fa-bars").click(function() {
 				$(this).toggleClass("fa-close");
 				$("nav").toggleClass("active")
 			});
+			$("nav a:nth-child(2)").click(function() {
+				let s = $("#about").position();
+				window.scrollTo(0, s.top-50);
+			})
+			$("nav a:nth-child(3)").click(function() {
+				let s = $("#projects").position();
+				window.scrollTo(0, s.top-50);
+			})
 			let date = new Date();
 			$("footer span").text(date.getFullYear());
 		});
@@ -37,11 +48,10 @@
 			color: #00237A;
 			background-color: white;
 		}
-		header h1, header i {
-			padding: 1.3rem;
-		}
-		#logo {
+		#logo, header i {
 			font-size: 1.3rem;
+			padding: 1.5rem;
+			margin: 0;
 		}
 		nav {
 			position: absolute;
@@ -84,11 +94,12 @@
 			justify-content: center;
 			align-items: center;
 		}
-		.main h1 {
+		.main h2 {
 			color: white;
-			line-height: 2.3rem;
-			width: 300px;
-			margin: 2rem 0;
+			line-height: 2.5rem;
+			width: 95%;
+			max-width: 500px;
+			margin: 3rem 0;
 			text-align: center;
 		}
 		.profile {
@@ -96,10 +107,10 @@
 		}
 		section img {
 			width: 100%;
+			max-width: 300px;
 			height: 250px;
 			border: 1px solid #233C7A;
 			padding: 1rem;
-			margin: auto;
 		}
 		.section {
 			padding: 1.5rem;
@@ -109,14 +120,8 @@
 			color: #00237A;
 			border-bottom: 2px solid #00237A;
 		}
-		.container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-around;
-		}
 		p {
-			font-size: 1.2rem;
-			line-height: 2.3rem;
+			line-height: 2rem;
 			margin-top: 1.3rem;
 			color: #00237A;
 		}
@@ -127,15 +132,18 @@
 		section a:hover, section a:visited {
 			color: #7C0004;
 		}
-		.project {
-			margin: 5%;
-			padding: 5%;
+		.row {
+			justify-content: center;
+		}
+		.col-3 {
+			width: 95%;
+			max-width: 360px;
+			margin: 1rem 0.6rem;
+			padding: 1rem;
 			transition: .3s ease-in-out;
-			width: 100%;
-			max-width: 400px;
 			border: 1px solid #00237A;
 		}
-		.project:hover {
+		.col-3:hover {
 			transform: scale(0.9);
 		}
 		h3 {
@@ -150,14 +158,12 @@
 			border-top: 1px solid #00237A;
 			text-align: center;
 			padding: 1rem 0 0.5rem;
+			bottom: 0;
 		}
 		footer h4 {
 			margin: 1rem;
 		}
 @media screen and (min-width: 450px) {
-			header h1, header i {
-				padding: 1.7rem;
-			}
 			nav {
 				top: 64.5px;
 			}
@@ -165,28 +171,23 @@
 				padding: 1.5rem;
 				font-size: 1.2rem;
 			}
-			.section {
-				padding: 2rem;
-			}
 			h2 {
 				padding-bottom: 1.3rem;
 			}
 			p {
-				font-size: 1.4rem;
-				line-height: 2.5rem;
+				line-height: 2.3rem;
+			}
+			.col-3 {
+				padding: 2rem;
 			}
 			h3 {
 				line-height: 2.3rem;
-				font-size: 1.5rem;
 			}
 		}
 @media screen and (min-width: 768px) {
 			header {
 				justify-content: space-around;
 				border-bottom: 2px solid #00237A;
-			}
-			header h1 {
-				padding: 1.7rem;
 			}
 			.fa-bars {
 				display: none;
@@ -213,15 +214,11 @@
 				color: white;
 				background-color: #00237A;
 			}
-			.section {
-				padding: 4rem 6rem;
-			}
 			h2 {
-				font-size: 1.7rem;
 				padding-bottom: 1.4rem;
 			}
-			p {
-				font-size: 1.4rem;
+			.col-3 {
+				padding: 2.5rem;
 			}
 			h3 {
 				line-height: 2.4rem;
@@ -234,19 +231,18 @@
 		<h1 id="logo">Princess Samiat Bada</h1>
 		<i class="fa-solid fa-bars"></i>
 		<nav>
-			<a href="#home">Home</a>
-			<a href="#about">About</a>
-			<a href="#projects">Projects</a>
+			<a href="#">Home</a>
+			<a href="javascript:void(0)">About</a>
+			<a href="javascript:void(0)">Projects</a>
 		</nav>
 	</header>
 	<section class="main">
 		<div class="profile">
 			<img src="img/princess1.jpg" alt="princess" />
 		</div>
-		<h1>Princess Samiat Abolanle Bada - Mayoress of Ikosi-Isheri L.C.D.A.</h1>
-		<b id="about"></b>
+		<h2>Princess Samiat Abolanle Bada - Mayoress of Ikosi-Isheri L.C.D.A.</h2>
 	</section>
-	<section class="section">
+	<section id="about" class="container section">
 		<h2>About - Biography</h2>
 		<p>
 			Born in December 28, 1973 at Ayepe Hospital, Odogbolu to the blessed family of late Alhaji Olatunji Raheem Bada from Ilesha town in Osun state and late Chief Mrs. Afolakemi Bada (JP) from Awosanya's family in Odogbolu town in Ogun state. She attended Moslem Primary School Odogbolu, and Odogbolu Grammar School respectively. One of the elitist schools in Ogun state
@@ -254,93 +250,107 @@
 		<br />
 		<p>
 			Due to change in environment she moved to Ajao estate high school Anthony village Lagos. She proceede to Ogun state university now Olabidi Onabanjo University for her diploma in marketing. She later proceed to the Lagos State University Ojo, where she bagged her BSC (Hons) in Geography and planning. She also has PGD in social works 2012/2013, and Masters in Social works 2017/2018... <a href="https://kosofepost.com/2020/01/30/biography-of-princess-samiat-abolanle-bada-mayoress-of-ikosi-isheri-lcda/">Read more.</a>
-			<b id="projects"></b>
 		</p>
 	</section>
-	<section class="section">
+	<section id="projects" class="container section">
 		<h2>Projects</h2>
-		<div class="container">
-			<div class="project">
+		<div class="row">
+			<div class="col-3">
 				<a href="https://kosofepost.com/2022/10/01/lasg-first-lady-commends-princess-samiat-for-sustaining-ikosi-isheri-cultural-carnival/">
 					<h3>LASG first lady commends Princess Samiat for sustaining Ikosi-Isheri Cultural Carnival </h3>
-					<img src="img/princess2.jpg" alt="Princess projects">
+					<center>
+						<img src="img/princess2.jpg" alt="Princess projects">
+					</center>
 					<p>
 						The first Lady of Lagos State, Mrs Ibijoke Sanwo-olu, has commended the Chairman of Ikosi-isheri LCDA, my dear sister, Princess Samiat Abolanle Bada, for...
 					</p>
 				</a>
 			</div>
-			<div class="project">
+			<div class="col-3">
 				<a href="https://www.lagoscommunitynewsreview.com.ng/2024/04/mayoress-princess-samiat-abolanle-bada.html?m=1">
 					<h3>
 						Mayoress Princess Samiat Abolanle Bada Distributes Governor Babajide...
 					</h3>
-					<img src="img/princess3.jpg" alt="Princess projects">
+					<center>
+						<img src="img/princess3.jpg" alt="Princess projects">
+					</center>
 					<p>
 						In a heartening display of solidarity and support, Governor Babajide Olusola Sanwo-Olu's food palliatives were distributed to the residents of Ikosi...
 					</p>
 				</a>
 			</div>
-			<div class="project">
+			<div class="col-3">
 				<a href="https://somolunewspaper.com.ng/2020/03/29/hon-princess-samiat-bolanle-bada-takes-motorized-sprayers-to-ikosi-isheri-community-to-the-spread-of-covid-19/">
 					<h3>
 						Hon. Princess Samiat Bolanle Bada takes motorized sprayers to Ikosi-Isheri community to...
 					</h3>
-					<img src="img/princess4.jpg" alt="Princess projects">
+					<center>
+						<img src="img/princess4.jpg" alt="Princess projects">
+					</center>
 					<p>
 						Princess Samiat Abolanle Bada took the fight against the invisible deadly virus to the streets of Ikosi Isheri LCDA today.She took the bull by the horn as...
 					</p>
 				</a>
 			</div>
-			<div class="project">
+			<div class="col-3">
 				<a href="https://somolunewspaper.com.ng/2020/02/14/ikosi-isheri-lcda-mayoress-princess-samiat-abolanle-bada-inspects-projects-in-her-domain/">
 					<h3>
 						Ikosi- Isheri LCDA Mayoress, Princess Samiat Abolanle Bada inspects projects in her domain
 					</h3>
-					<img src="img/princess5.jpg" alt="Princess projects">
+					<center>
+						<img src="img/princess5.jpg" alt="Princess projects">
+					</center>
 					<p>
 						In an effort to ensure no stone is left unturned, the Mayoress of Ikosi Isheri LCDA, Princess Samiat Abolanle Bada took a quick trip on an inspection tour...
 					</p>
 				</a>
 			</div>
-			<div class="project">
+			<div class="col-3">
 				<a href="https://ajasainfo.com/2024/01/29/princess-samiat-bada-distributes-educational-materials-to-primary-schools-in-ikosi-isheri-lcda-ajasa-info/">
 					<h3>
 						Princess Samiat Bada Distributes Educational materials to Primary Schools in Ikosi-Isheri LCDA...
 					</h3>
-					<img src="img/princess6.jpg" alt="Princess projects">
+					<center>
+						<img src="img/princess6.jpg" alt="Princess projects">
+					</center>
 					<p>
 						Princess Samiat Abolanle Bada the Mayoress of Ikosi-Isheri LCDA, is making a tremendous impact through her “Mayoress Education Support...
 					</p>
 				</a>
 			</div>
-			<div class="project">
+			<div class="col-3">
 				<a href="https://ajasainfo.com/2024/08/27/princess-samiat-bada-presents-free-gce-forms-to-students-in-ikosi-isheri-lcda-ajasa-info/">
 					<h3>
 						PRINCESS SAMIAT BADA PRESENTS FREE GCE FORMS TO STUDENTS IN IKOSI-ISHERI LCDA
 					</h3>
-					<img src="img/princess7.jpg" alt="Princess projects">
+					<center>
+						<img src="img/princess7.jpg" alt="Princess projects">
+					</center>
 					<p>
 						Princess Samiat Abolanle Bada, Mayoress of Ikosi-Isheri LCDA, presented free GCE forms to students in Ikosi-Isheri LCDA. This gesture aims...
 					</p>
 				</a>
 			</div>
-			<div class="project">
+			<div class="col-3">
 				<a href="https://somolunewspaper.com.ng/2022/02/11/mayoress-of-ikosi-isheri-lcda-empowers-200-resident-with-n50000-each-and-distributes-food-palliatives-combo-of-rice-beans-and-garri-to-1500-persons-for-the-month/">
 					<h3>
 						Mayoress of Ikosi-Isheri LCDA empowers 200 residents with N50,000 each, and...
 					</h3>
-					<img src="img/princess8.jpg" alt="Princess projects">
+					<center>					<img src="img/princess8.jpg" alt="Princess projects">
+					</center>
 					<p>
 						Residents of Ikosi-Isheri LCDA were full of joy and praises to the MAYORESS as she made another promise kept by rolling out N50,000 cash empowerment to 200...
 					</p>
 				</a>
 			</div>
-			<div class="project">
+			<div class="col-3">
 				<a href="https://somolunewspaper.com.ng/2020/03/20/photo-speaks/">
 					<h3>
 						PHOTO SPEAKS: The mayoress of Ikosi-Isheri, Hon. Princess Samiat Bolanle Bada completes...
 					</h3>
-					<img src="img/princess9.jpg" alt="Princess projects">
+					<center>
+						<img src="img/princess9.jpg" alt="Princess projects">
+					</center>
 					<p>
 						As parts of the effort to further make roads in Ikosi-Isheri LCDA motorable, the mayoress of Ikosi-Isheri, Hon. Princess Samiat Bolanle Bada has completed the...
 					</p>
