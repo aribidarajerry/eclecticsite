@@ -3,6 +3,7 @@ $(document).ready(function() {
 		$(this).toggleClass("fa-close");
 		$("nav").toggleClass("active")
 	});
+	
 	$(".portfolio").hover(function() {
 		$(".portfolio p").slideDown();
 	}, function() {
