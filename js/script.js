@@ -24,13 +24,14 @@ $(document).ready(function() {
 	}, function() {
 		$(".princess p").slideUp();
 	})
+	$(".data").hover(function() {
+		$(".data p").slideDown();
+	}, function() {
+		$(".data p").slideUp();
+	})
 	$(".resume").hover(function() {
 		$(".resume p").slideDown();
 	}, function() {
 		$(".resume p").slideUp();
 	})
-	/*	$(".test").click(function() {
-		let div = "<div class='test'>Jerry</div>"
-		$(div).insertAfter("div");
-	})*/
 })
