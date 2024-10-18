@@ -9,11 +9,6 @@ $(document).ready(function() {
 	}, function() {
 		$(".portfolio p").slideUp();
 	})
-	$(".data").hover(function() {
-		$(".data p").slideDown();
-	}, function() {
-		$(".data p").slideUp();
-	})
 	$(".calculator").hover(function() {
 		$(".calculator p").slideDown();
 	}, function() {
